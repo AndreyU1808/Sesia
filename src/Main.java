@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         // Создаем пользователей
-        UserAccount user1 = new UserAccount(1, "PlayerOne", "player1@example.com", "password123");
-        UserAccount user2 = new UserAccount(2, "PlayerTwo", "player2@example.com", "password456");
+        UserAccount user1 = new UserAccount(1, "PlayerOne", "player1@example.com", "password123", "blue");
+        UserAccount user2 = new UserAccount(2, "PlayerTwo", "player2@example.com", "password456", "red");
 
         // Создаем товар (игру)
         Item game = new Game(1, "Cyberpunk 2077", 59.99, "CDKEY12345");

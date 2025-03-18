@@ -9,15 +9,17 @@ public class UserAccount {
     private String password;   // Пароль (в реальных приложениях нужно хешировать!)
     private double balance;    // Баланс пользователя
     private List<Item> inventory; // Инвентарь пользователя (купленные товары)
+    private String colorProfil;
 
     // Конструктор класса
-    public UserAccount(int userId, String username, String email, String password) {
+    public UserAccount(int userId, String username, String email, String password, String colorProfil) {
         this.userId = userId;
         this.username = username;
         this.email = email;
         this.password = password;
         this.balance = 0.0;
         this.inventory = new ArrayList<>();
+        this.colorProfil = colorProfil;
     }
 
     // Геттеры для получения информации
@@ -27,12 +29,14 @@ public class UserAccount {
     public String getPassword() { return password; }
     public double getBalance() { return balance; }
     public List<Item> getInventory() { return inventory; }
+    public String getColorProfil() {return  colorProfil}
 
     // Сеттеры для изменения данных пользователя
     public void setUsername(String username) { this.username = username; }
     public void setEmail(String email) { this.email = email; }
     public void setPassword(String password) { this.password = password; }
     public void setBalance(double balance) { this.balance = balance; }
+    public void setColorProfil(String colorProfil) {this.colorProfil = colorProfil; }
 
     // Метод пополнения баланса
     public void addFunds(double amount) { this.balance += amount; }
