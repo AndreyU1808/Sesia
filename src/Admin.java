@@ -1,20 +1,27 @@
-// Класс Admin представляет администратора системы.
-public class Admin {
-    // Поле для хранения уникального идентификатора администратора.
-    private int adminId;
+import java.time.LocalDateTime;
 
-    // Поле для хранения имени пользователя администратора.
-    private String username;
+public class Admin extends UserAccount {
 
-    // Конструктор класса Admin для инициализации объекта с заданными параметрами.
-    public Admin(int adminId, String username) {
-        this.adminId = adminId;
-        this.username = username;
+    public Admin(int id, String email, String password, LocalDateTime lastActive, String fullName, String address,
+                 String tradeLink, String profileLink, String paymentCard, String displayedGames,
+                 int totalPlaytime, String decoration) {
+        super(id, email, password, lastActive, fullName, address, tradeLink, profileLink,
+                paymentCard, displayedGames, totalPlaytime, decoration);
     }
 
-    // Метод для установки цены на товар (Item).
-    // Принимает объект Item и новое значение цены, затем устанавливает его.
-    public void setItemPrice(Item item, double price) {
-        item.setPrice(price);
+    public void displayRole() {
+        System.out.println("I am an admin.");
     }
+
+    @Override
+    public void showRole() {
+        System.out.println("I am an admin.");
+    }
+
+
+    public void banUser(UserAccount user) {
+        System.out.println("User " + user.getFullName() + " has been banned by admin " + this.getFullName());
+    }
+
+
 }

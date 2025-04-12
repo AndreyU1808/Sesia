@@ -1,25 +1,56 @@
+import java.time.LocalDateTime;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        // Создаем пользователей
-        UserAccount user1 = new UserAccount(1, "PlayerOne", "player1@example.com", "password123", "blue");
-        UserAccount user2 = new UserAccount(2, "PlayerTwo", "player2@example.com", "password456", "red");
 
-        // Создаем товар (игру)
-        Item game = new Game(1, "Cyberpunk 2077", 59.99, "CDKEY12345");
 
-        // Создаем маркетплейс
-        Marketplace marketplace = new Marketplace();
+        Game game = new Game(9837, "Tittanfal2", 98);
 
-        // Пополняем баланс пользователя
-        user1.addFunds(100);
+        UserAccount user1 = new UserAccount(18, "dhnfijd@mail.ru", "21djsk", LocalDateTime.now(), "Mira",
+                "hdjdh21", "hiudf8219", "ibmin", "VisaCard", "djh",
+                28, "HEADPHONE GREEN, MOUS BLUE, KEYBOARD RAINBOW");
 
-        // Выставляем товар на продажу
-        marketplace.listItemForSale(game, 59.99, user1);
+        Review review = new Review(28, 97, 6, "normal game for killing time on work");
 
-        // Покупка товара
-        if (!marketplace.getListings().isEmpty()) {
-            Listing listing = marketplace.getListings().get(0);
-            marketplace.buyItem(user2, listing);
-        }
+        Product product = new Product(28, "Funtap", 26.6f, 972, "survavel");
+
+        Skin skin = new Skin(79, "knifeBouvi", 28, "legendray");
+
+        Sale trade = new Sale(79, user1, product, 27, "accept");
+
+        Order firsSearch = new Order(921, 1412, "ddis1724", "28sept", "accept", 98.4f);
+
+        Cart cart = new Cart("DeluxEdition", 28, 9837, "Funtap");
+
+        Transaction transaction1 = new Transaction(64, 9837, 43, 64.5f,
+                "CardVIsa", "accept");
+
+        Decoration decoration1 = new Decoration(134, "Rainbow Bow", "hdkjd0", 934.1, 98);
+
+        Admin admin = new Admin(
+                2, "admin@mail.com", "adminpass", LocalDateTime.now(),
+                "AdminUser", "Mars", "adminLink", "adminProfile",
+                "AdminCard", "All Games", 9999, "Golden Skin");
+
+        UserAccount user2 = new UserAccount(
+                19, "simple@mail.com", "123456", LocalDateTime.now(),
+                "SimpleUser", "Earth", "link", "profile", "MasterCard",
+                "One Game", 100, "Plain Skin");
+
+        UserAccount admin2 = new Admin(
+                3, "secondadmin@mail.com", "securepass", LocalDateTime.now(),
+                "SecondAdmin", "Venus", "link2", "profile2", "GoldCard",
+                "All Games", 8888, "Gold Skin");
+
+        admin.getFullName();
+
+        admin.displayRole();
+        admin.banUser(user1);
+
+        user1.showRole();
+        user2.showRole();
+        admin2.showRole();
     }
 }

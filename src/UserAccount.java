@@ -1,53 +1,159 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
 
-// Класс UserAccount представляет аккаунт пользователя на платформе.
+
 public class UserAccount {
-    private int userId;        // Уникальный ID пользователя
-    private String username;   // Имя пользователя
-    private String email;      // Электронная почта
-    private String password;   // Пароль (в реальных приложениях нужно хешировать!)
-    private double balance;    // Баланс пользователя
-    private List<Item> inventory; // Инвентарь пользователя (купленные товары)
-    private String colorProfil;
+    private int id;
+    private String email;
+    private String password;
+    private LocalDateTime lastActive;
+    private String fullName;
+    private String address;
+    private String tradeLink;
+    private String profileLink;
+    private String paymentCard;
+    private String  displayedGames;
+    private int totalPlaytime;
+    private String  decoration;
 
-    // Конструктор класса
-    public UserAccount(int userId, String username, String email, String password, String colorProfil) {
-        this.userId = userId;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.balance = 0.0;
-        this.inventory = new ArrayList<>();
-        this.colorProfil = colorProfil;
+    private void register(String username, String email, String password) {
     }
 
-    // Геттеры для получения информации
-    public int getUserId() { return userId; }
-    public String getUsername() { return username; }
-    public String getEmail() { return email; }
-    public String getPassword() { return password; }
-    public double getBalance() { return balance; }
-    public List<Item> getInventory() { return inventory; }
-    public String getColorProfil() {return  colorProfil}
+    private void login(String email, String password) {
+    }
 
-    // Сеттеры для изменения данных пользователя
-    public void setUsername(String username) { this.username = username; }
-    public void setEmail(String email) { this.email = email; }
-    public void setPassword(String password) { this.password = password; }
-    public void setBalance(double balance) { this.balance = balance; }
-    public void setColorProfil(String colorProfil) {this.colorProfil = colorProfil; }
+    private void logout() {
+    }
 
-    // Метод пополнения баланса
-    public void addFunds(double amount) { this.balance += amount; }
+    private void purchaseItem(int productId) {
+    }
 
-    // Метод покупки товара
-    public boolean purchaseItem(Item item, double price) {
-        if (this.balance >= price) {
-            this.balance -= price;
-            this.inventory.add(item); // Добавляем товар в инвентарь
-            return true;
-        }
-        return false;
+    private void addFunds(float amount) {
+    }
+
+    private void withdrawFunds(float amount) {
+    }
+
+    private void uploadCustomDecoration(String file, float price) {
+    }
+
+    private void listItemForSale(int productId, float price) {
+    }
+
+    public void showRole() {
+        System.out.println("I am a regular user.");
+    }
+
+
+    public UserAccount(int id, String email, String password, LocalDateTime lastActive, String fullName, String address,
+                       String tradeLink, String profileLink, String paymentCard, String displayedGames,
+                       int totalPlaytime, String decoration) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.lastActive = lastActive;
+        this.fullName = fullName;
+        this.address = address;
+        this.tradeLink = tradeLink;
+        this.profileLink = profileLink;
+        this.paymentCard = paymentCard;
+        this.displayedGames = displayedGames;
+        this.totalPlaytime = totalPlaytime;
+        this.decoration = decoration;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public LocalDateTime getLastActive() {
+        return lastActive;
+    }
+
+    public void setLastActive(LocalDateTime lastActive) {
+        this.lastActive = lastActive;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTradeLink() {
+        return tradeLink;
+    }
+
+    public void setTradeLink(String tradeLink) {
+        this.tradeLink = tradeLink;
+    }
+
+    public String getProfileLink() {
+        return profileLink;
+    }
+
+    public void setProfileLink(String profileLink) {
+        this.profileLink = profileLink;
+    }
+
+    public String getPaymentCard() {
+        return paymentCard;
+    }
+
+    public void setPaymentCard(String paymentCard) {
+        this.paymentCard = paymentCard;
+    }
+
+    public String getDisplayedGames() {
+        return displayedGames;
+    }
+
+    public void setDisplayedGames(String displayedGames) {
+        this.displayedGames = displayedGames;
+    }
+
+    public int getTotalPlaytime() {
+        return totalPlaytime;
+    }
+
+    public void setTotalPlaytime(int totalPlaytime) {
+        this.totalPlaytime = totalPlaytime;
+    }
+
+    public String getDecoration() {
+        return decoration;
+    }
+
+    public void setDecoration(String decoration) {
+        this.decoration = decoration;
     }
 }
